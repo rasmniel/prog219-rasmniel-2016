@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Starter Lists</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body ng-app="main">
+    <div ng-controller="ListControl as list">
+        <h1>Angular Starter Lists</h1>
+
+        <p>Enter a name and I will add it to our list.</p>
+        <form ng-submit="addTodo()">
+            <input type="text" ng-model="listItem" placeholder="Enter list item name">
+            <input class="btn-primary" type="submit" value="add">
+        </form>
+
+        <p>You entered: {{listItem}}</p>
+        <ul class="unstyled">
+            <li ng-repeat="todo in todoList">
+                <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+
+        <p>Total items: {{itemCount}}</p>
+    </div>
+</body>
+
+</html>
