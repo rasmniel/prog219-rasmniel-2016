@@ -17,6 +17,7 @@
         $scope.todoList = listData;
         $scope.listItem = "New Item";
         $scope.itemCount = getItemCount();
+        
         $scope.addTodo = function() {
             $scope.todoList.push({
                 text : $scope.listItem,
