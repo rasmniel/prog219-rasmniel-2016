@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Angular Routes Nielsen' });
 });
 
-router.get('/:id', function(req, res, nest) {
+router.get('/:id', function(req, res, next) {
   res.render(req.params.id, { title: ' Angular Routes Nielsen' });
 });
 
