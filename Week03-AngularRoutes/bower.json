@@ -1,0 +1,20 @@
+{
+  "name": "Week03-AngularRoutes",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Rasmus Nielsen <rasmniel@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rasmniel/prog219-rasmniel-2016",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.5"
+  }
+}
