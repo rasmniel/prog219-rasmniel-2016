@@ -22,6 +22,8 @@ calculator.operandA = me.firstName.length;
 calculator.operandB = me.lastName.length;
 
 console.log(me.firstName + ' ' + me.lastName);
-console.log(calculator.add());
-console.log(calculator.subtract());
-console.log(multiply());
+console.log('OperandA: ' + calculator.operandA);
+console.log('OperandB: ' + calculator.operandB);
+console.log('Adding operands: ' + calculator.add());
+console.log('Subtracting operands: ' + calculator.subtract());
+console.log('Multiplying by mind...: ' + multiply());
