@@ -10,4 +10,12 @@ elfApp.controller('MainController', function($scope) {
     $scope.getNine = function() {
         return 9;
     };
+    
+    $scope.getSeven = function() {
+        return 7;  
+    };
+    
+    $scope.add = function(num1, num2) {
+        return num1 + num2;    
+    };
 });

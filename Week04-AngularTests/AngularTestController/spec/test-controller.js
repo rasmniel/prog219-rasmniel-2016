@@ -27,4 +27,14 @@ describe('Test MainController Suite', function() {
         expect(scope.getNine()).toBe(9);
     });
 
+    it('can get seven', function() {
+        expect(scope.getSeven()).toBe(7);
+    });
+
+    it('can add two numbers together', function() {
+        var num1 = 5;
+        var num2 = 7;
+        var result = num1 + num2;
+        expect(scope.add(num1, num2)).toBe(result);
+    });
 });
