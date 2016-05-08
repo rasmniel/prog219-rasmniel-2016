@@ -68,7 +68,7 @@ describe('Elvenware Simple Plain Suite', function() {
         expect(element.text()).toContain('Solar');
     });
 
-    it('should be possible to access the marie fixture', function() {
+    it('should be possible to access the renewable fixture', function() {
         var spanElement = document.getElementById('renewable');
         expect(spanElement).toBeDefined();
         expect(spanElement.innerHTML).toContain('quadrillion');
