@@ -1,0 +1,13 @@
+p This is main
+
+p {{mainController.mainData}}
+
+button.btn.btn-primary(ng-click="mainController.getRenewable()") Energy Renewable
+
+div
+    label
+        | Number:
+        input(type='number', name='input', ng-model='mainController.index', min='0', max='10', required='')
+hr
+
+elf-renewable
