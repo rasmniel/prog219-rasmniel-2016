@@ -33,11 +33,11 @@ describe('Elvenware Simple Plain Suite', function() {
     });
 
     it('should find the index', function() {
-        expect(mainController.index).toBe(0);
+        expect(scope.index).toBe(0);
     });
 
     it('should have a getRenewable method ', function() {
-        expect(mainController.getRenewable).toBeDefined();
+        expect(scope.getRenewable).toBeDefined();
     });
 
     it('should be possible to access the fixture', function() {
@@ -50,7 +50,7 @@ describe('Elvenware Simple Plain Suite', function() {
     });
 
     it('tests scope variable access in template loaded through raw text', function() {
-        $templateCache.put('marie',
+        $templateCache.put('renewable',
             '<div id="renewable">' +
             '<p><span class="caption">Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}</span></p>' +
             '<p><span class="caption">Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}</span></p>' +

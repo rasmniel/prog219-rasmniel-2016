@@ -1,15 +1,15 @@
 var elfApp = angular.module("elfApp");
 
-elfApp.controller('MainController', function($http) {
+elfApp.controller('MainController', function($scope, $http) {
     var mainController = this;
-    mainController.mainData = "Main Data";
-    mainController.index = 0;
-    mainController.getRenewable = function() {
+    $scope.mainData = 'MainData';
+    $scope.index = 0;
+    $scope.getRenewable = function() {
         console.log('getRenewable');
         $http.get('data/Renewable.json')
-            .then(function(res) {
-                console.log(res.data[0]);
-                mainController.renewable = res.data;
+            .then(function(response) {
+                console.log(response.data[0]);
+                $scope.renewable = response.data;
             });
     };
 });
@@ -19,13 +19,14 @@ elfApp.directive('elfRenewable', function() {
     return {
         controller: 'MainController',
         controllerAs: 'mainController',
-        template: 'First: {{mainController.renewable[mainController.index].Year}} ' +
-            '<br>Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}' +
-            '<br>Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}' +
-            '<br>Other biomass: {{mainController.renewable[mainController.index]["Other biomass (quadrillion Btu)"]}}' +
-            '<br>Wind power: {{mainController.renewable[mainController.index]["Wind power (quadrillion Btu)"]}}' +
-            '<br>Liquid biofuels: {{mainController.renewable[mainController.index]["Liquid biofuels (quadrillion Btu)"]}}' +
-            '<br>Wood biomass: {{mainController.renewable[mainController.index]["Wood biomass (quadrillion Btu)"]}}' +
-            '<br>Hydropower: {{mainController.renewable[mainController.index]["Hydropower (quadrillion Btu)"]}}'
+        template: '    <p><span class="caption">First: {{renewable[index]["Year"]}}</span></p>' +
+            '    <p><span class="caption">Solar: {{renewable[index]["Solar (quadrillion Btu)"]}}</span></p>' +
+            '    <p><span class="caption">Geothermal: {{renewable[index]["Geothermal (quadrillion Btu)"]}}</span></p>' +
+            '    <p><span class="caption">Other biomass: {{renewable[index]["Other biomass (quadrillion Btu)"]}}</span></p>' +
+            '    <p><span class="caption">Wind power: {{renewable[index]["Wind power (quadrillion Btu)"]}}</span></p>' +
+            '    <p><span class="caption">Liquid biofuels: {{renewable[index]["Liquid biofuels (quadrillion Btu)"]}}</span></p>' +
+            '    <p><span class="caption">Wood biomass: {{renewable[index]["Wood biomass (quadrillion Btu)"]}}</span></p>' +
+            '    <p><span class="caption">Hydropower: {{renewable[index]["Hydropower (quadrillion Btu)"]}}</span></p>'
+
     };
 });
