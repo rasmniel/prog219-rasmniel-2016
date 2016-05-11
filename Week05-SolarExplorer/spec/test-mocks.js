@@ -1,5 +1,5 @@
 
-describe('Elvenware Simple Plain Suite', function() {
+describe('Elvenware Simple Mocks with HttpBackend Suite', function() {
 
     'use strict';
 

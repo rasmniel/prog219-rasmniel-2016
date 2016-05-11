@@ -18,6 +18,7 @@ module.exports = function(config) {
             'public/javascripts/app.js',
             'public/javascripts/*.js',
             'spec/**/*.html',
+            'spec/data/*.js',
             'spec/test*.js'
         ],
 

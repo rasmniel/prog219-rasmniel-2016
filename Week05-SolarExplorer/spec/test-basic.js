@@ -2,7 +2,7 @@
  * Created by charlie on 10/7/15.
  */
 
-describe('Elvenware Simple Plain Suite', function() {
+describe('Elvenware Fixture and Template Cache Suite', function() {
 
     'use strict';
 
@@ -52,13 +52,13 @@ describe('Elvenware Simple Plain Suite', function() {
     it('tests scope variable access in template loaded through raw text', function() {
         $templateCache.put('renewable',
             '<div id="renewable">' +
-            '<p><span class="caption">Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}</span></p>' +
-            '<p><span class="caption">Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}</span></p>' +
-            '<p><span class="caption">Other biomass: {{mainController.renewable[mainController.index]["Other biomass (quadrillion Btu)"]}}</span></p>' +
-            '<p><span class="caption">Wind power: {{mainController.renewable[mainController.index]["Wind power (quadrillion Btu)"]}}</span></p>' +
-            '<p><span class="caption">Liquid biofuels: {{mainController.renewable[mainController.index]["Liquid biofuels (quadrillion Btu)"]}}</span></p>' +
-            '<p><span class="caption">Wood biomass: {{mainController.renewable[mainController.index]["Wood biomass (quadrillion Btu)"]}}</span></p>' +
-            '<p><span class="caption">Hydropower: {{mainController.renewable[mainController.index]["Hydropower (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Other biomass: {{mainController.renewable[mainController.index]["Other biomass (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Wind power: {{mainController.renewable[mainController.index]["Wind power (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Liquid biofuels: {{mainController.renewable[mainController.index]["Liquid biofuels (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Wood biomass: {{mainController.renewable[mainController.index]["Wood biomass (quadrillion Btu)"]}}</span></p>' +
+            '   <p><span class="caption">Hydropower: {{mainController.renewable[mainController.index]["Hydropower (quadrillion Btu)"]}}</span></p>' +
             '</div>');
 
         var element = $compile('<elf-renewable></elf-renewable>')(scope);
