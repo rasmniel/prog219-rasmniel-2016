@@ -1,4 +1,4 @@
-fdescribe('Simple Format Fixture Suite', function() {
+describe('Simple Format Fixture Suite', function() {
 
     'use strict';
 
@@ -39,7 +39,7 @@ fdescribe('Simple Format Fixture Suite', function() {
 
     it('should be possible to access the fixture', function() {
         var simpleFormatHtml = document.getElementById('simple-format');
-        console.log(simpleFormatHtml);
+        // console.log(simpleFormatHtml);
         expect(simpleFormatHtml.innerHTML).toContain('Solar:');
         expect(simpleFormatHtml.innerHTML).toContain('Geo:');
         expect(simpleFormatHtml.innerHTML).toContain('Wind:');
@@ -57,7 +57,7 @@ fdescribe('Simple Format Fixture Suite', function() {
         var element = $compile('<elf-simple-format></elf-simple-format>')(scope);
         scope.$digest();
 
-        console.log(simpleFormatHtml);
+        // console.log(simpleFormatHtml);
         expect(simpleFormatHtml.innerHTML).toContain('Solar: 2');
         expect(simpleFormatHtml.innerHTML).toContain('Geo: 1');
         expect(simpleFormatHtml.innerHTML).toContain('Wind: 3');

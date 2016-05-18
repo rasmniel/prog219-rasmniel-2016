@@ -64,7 +64,7 @@ describe('Renewables Suite', function() {
 
     it('proves we can get our wood map', function() {
         var woods = scope.renewableUtils.getWood();
-        console.log(woods);
+        // console.log(woods);
         expect(woods.length).toBe(12);
         expect(woods[11]).toEqual({
             // Changed test value to fit with Wood biomass rather than Hydropower.

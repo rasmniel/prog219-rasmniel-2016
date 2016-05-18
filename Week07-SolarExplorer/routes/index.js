@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
     'use strict';
     res.render(req.params.id, {
-        title: ' Angular Directive Nielsen'
+        title: 'Angular Directive Nielsen'
     });
 });
 

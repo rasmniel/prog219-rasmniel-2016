@@ -20,7 +20,14 @@ function RenewableUtils() {
     };
 
     this.getByYear = function(year) {
-
+        for (var i = 0; i < renewables.length; i++) {
+            if (renewables[i].Year == year) {
+                return {
+                    index: i,
+                    renewable: renewables[i]
+                };
+            }
+        }
     };
 
     this.getYears = function() {
