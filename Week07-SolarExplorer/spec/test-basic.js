@@ -1,4 +1,4 @@
-fdescribe('Elvenware Fixture and Template Cache Suite', function() {
+describe('Elvenware Fixture and Template Cache Suite', function() {
 
     'use strict';
 
@@ -26,6 +26,14 @@ fdescribe('Elvenware Fixture and Template Cache Suite', function() {
     beforeEach(function() {
         jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
         loadFixtures('renewable.html');
+    });
+
+    fit('is scope defined?', function() {
+        expect(scope).toBeDefined();
+    });
+    
+    fit('is scope undefined?', function() {
+        expect(scope).toBeUndefined();
     });
 
     it('should find the index', function() {

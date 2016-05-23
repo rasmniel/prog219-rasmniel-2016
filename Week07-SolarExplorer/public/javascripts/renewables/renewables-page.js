@@ -24,7 +24,6 @@ elfApp.controller('MainController', function($scope, $http, renewableUtils) {
                 $scope.renewable = response.data;
             });
     };
-
 });
 
 elfApp.directive('elfRenewable', function() {
