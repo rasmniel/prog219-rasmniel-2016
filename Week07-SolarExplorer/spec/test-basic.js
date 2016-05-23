@@ -27,15 +27,7 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
         jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
         loadFixtures('renewable.html');
     });
-
-    fit('is scope defined?', function() {
-        expect(scope).toBeDefined();
-    });
     
-    fit('is scope undefined?', function() {
-        expect(scope).toBeUndefined();
-    });
-
     it('should find the index', function() {
         expect(scope.index).toBe(0);
     });
