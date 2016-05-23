@@ -1,7 +1,3 @@
-/**
- * Created by charlie on 10/7/15.
- */
-
 describe('Elvenware Fixture and Template Cache Suite', function() {
 
     'use strict';
@@ -50,7 +46,7 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
     });
 
     it('tests scope variable access in template loaded through raw text', function() {
-        $templateCache.put('renewable',
+        $templateCache.put('renewables/renewable',
             '<div id="renewable">' +
             '   <p><span class="caption">Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}</span></p>' +
             '   <p><span class="caption">Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}</span></p>' +
@@ -77,7 +73,7 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
     it('tests scope variable access in template loaded through fixture', function() {
         // Get element from fixture
         var el = document.getElementById('renewable');
-        $templateCache.put('renewable', el);
+        $templateCache.put('renewables/renewable', el);
         var element = $compile('<elf-renewable></elf-renewable>')(scope);
         scope.$digest();
         // Check that the compiled element contains the templated content
