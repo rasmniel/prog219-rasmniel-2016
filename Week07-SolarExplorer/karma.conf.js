@@ -16,6 +16,7 @@ module.exports = function(config) {
             'public/components/angular-mocks/angular-mocks.js',
             'node_modules/jasmine-jquery/lib/*.js',
             'public/javascripts/app.js',
+            'public/javascripts/**/*.js',
             'public/javascripts/*.js',
             'spec/**/*.html',
             'spec/data/*.js',

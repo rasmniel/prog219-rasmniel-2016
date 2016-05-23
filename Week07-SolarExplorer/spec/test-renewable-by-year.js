@@ -74,7 +74,6 @@ describe('Simple Format Exercises Suite - aka. Renewable By Year Suite', functio
             index: 5,
             renewable: renewableByYear
         });
-
     });
 
     it('tests that we can get a renewable object by Year from our controller', function() {
@@ -85,7 +84,7 @@ describe('Simple Format Exercises Suite - aka. Renewable By Year Suite', functio
 
     it('tests that we can get a renewable object by Year in our elfRenewableByYear directive', function() {
         var simpleFormatHtml = document.getElementById('renewableByYear');
-        $templateCache.put('renewable-by-year', simpleFormatHtml);
+        $templateCache.put('renewables/renewable-by-year', simpleFormatHtml);
         var element = $compile('<elf-renewable-by-year></elf-renewable-by-year>')(scope);
         scope.$digest();
         var renewableByYear = scope.getByYear('2015');

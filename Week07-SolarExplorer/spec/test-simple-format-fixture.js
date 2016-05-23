@@ -53,7 +53,7 @@ describe('Simple Format Fixture Suite', function() {
         }];
 
         var simpleFormatHtml = document.getElementById('simple-format');
-        $templateCache.put('simple-format', simpleFormatHtml);
+        $templateCache.put('renewables/simple-format', simpleFormatHtml);
         var element = $compile('<elf-simple-format></elf-simple-format>')(scope);
         scope.$digest();
 
