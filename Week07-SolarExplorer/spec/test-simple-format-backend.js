@@ -53,7 +53,7 @@ describe('Simple Format HttpBackend Suite', function() {
 
         var el = document.getElementById('simple-format');
 
-        $templateCache.put('simple-format', el);
+        $templateCache.put('renewables/simple-format', el);
         var element = $compile('<elf-simple-format></elf-simple-format>')(scope);
         scope.$digest();
 
@@ -67,7 +67,7 @@ describe('Simple Format HttpBackend Suite', function() {
 
         var el = document.getElementById('simple-format');
         // console.log(el);
-        $templateCache.put('simple-format', el);
+        $templateCache.put('renewables/simple-format', el);
         var element = $compile('<elf-simple-format></elf-simple-format>')(scope);
         scope.$digest();
         scope.index = 5;
