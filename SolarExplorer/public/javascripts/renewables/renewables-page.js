@@ -13,6 +13,10 @@ elfApp.controller('MainController', function($scope, $http, renewableUtils) {
                 $scope.renewable = res.data;
                 $scope.renewableUtils = renewableUtils;
                 $scope.simpleFormat = renewableUtils.getSimpleFormat();
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log('Error:', response.status, response.statusText);
             });
     };
 
@@ -22,6 +26,10 @@ elfApp.controller('MainController', function($scope, $http, renewableUtils) {
             .then(function(response) {
                 console.log(response.data[0]);
                 $scope.renewable = response.data;
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log('Error:', response.status, response.statusText);
             });
     };
 });
