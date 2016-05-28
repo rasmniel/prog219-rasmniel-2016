@@ -39,7 +39,7 @@ function RenewableUtils() {
     this.getWood = function() {
         return renewables.map(function(renewable) {
             return {
-                wood: renewable["Wood biomass (quadrillion Btu)"]
+                wood: renewable['Wood biomass (quadrillion Btu)']
             };
         });
     };
@@ -48,9 +48,13 @@ function RenewableUtils() {
         var simpleArray = [];
         for (var i = 0; i < renewables.length; i++) {
             simpleArray.push({
-                'geo': parseFloat(renewables[i]["Geothermal (quadrillion Btu)"]),
-                'solar': parseFloat(renewables[i]["Solar (quadrillion Btu)"]),
-                'wind': parseFloat(renewables[i]["Wind power (quadrillion Btu)"])
+                'solar': parseFloat(renewables[i]['Solar (quadrillion Btu)']),
+                'geo': parseFloat(renewables[i]['Geothermal (quadrillion Btu)']),
+                'other': parseFloat(renewables[i]['Other biomass (quadrillion Btu)']),
+                'wind': parseFloat(renewables[i]['Wind power (quadrillion Btu)']),
+                'liquid': parseFloat(renewables[i]['Liquid biofuels (quadrillion Btu)']),
+                'wood': parseFloat(renewables[i]['Wood biomass (quadrillion Btu)']),
+                'hydro': parseFloat(renewables[i]['Hydropower (quadrillion Btu)'])
             });
         }
         return simpleArray;
@@ -60,9 +64,13 @@ function RenewableUtils() {
         var simpleArray = [];
         for (var i = 0; i < renewables.length; i++) {
             simpleArray.push({
-                'geo': renewables[i]["Geothermal (quadrillion Btu)"],
-                'solar': renewables[i]["Solar (quadrillion Btu)"],
-                'wind': renewables[i]["Wind power (quadrillion Btu)"]
+                'solar': renewables[i]['Solar (quadrillion Btu)'],
+                'geo': renewables[i]['Geothermal (quadrillion Btu)'],
+                'other': renewables[i]['Other biomass (quadrillion Btu)'],
+                'wind': renewables[i]['Wind power (quadrillion Btu)'],
+                'liquid': renewables[i]['Liquid biofuels (quadrillion Btu)'],
+                'wood': renewables[i]['Wood biomass (quadrillion Btu)'],
+                'hydro': renewables[i]['Hydropower (quadrillion Btu)']
             });
         }
         return simpleArray;

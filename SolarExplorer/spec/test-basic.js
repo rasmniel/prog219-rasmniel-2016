@@ -18,7 +18,7 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
         scope = _$rootScope_.$new();
         $compile = _$compile_;
         $templateCache = _$templateCache_;
-        mainController = _$controller_('MainController', {
+        mainController = _$controller_('RenewablesController', {
             $scope: scope
         });
     }));
@@ -27,7 +27,7 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
         jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
         loadFixtures('renewable.html');
     });
-    
+
     it('should find the index', function() {
         expect(scope.index).toBe(0);
     });
@@ -44,9 +44,9 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
     it('expects true to be true', function() {
         expect(true).toBe(true);
     });
-
     it('tests scope variable access in template loaded through raw text', function() {
         $templateCache.put('renewables/renewable',
+            // jscs:disable maximumLineLength
             '<div id="renewable">' +
             '   <p><span class="caption">Solar: {{mainController.renewable[mainController.index]["Solar (quadrillion Btu)"]}}</span></p>' +
             '   <p><span class="caption">Geothermal: {{mainController.renewable[mainController.index]["Geothermal (quadrillion Btu)"]}}</span></p>' +
@@ -56,7 +56,7 @@ describe('Elvenware Fixture and Template Cache Suite', function() {
             '   <p><span class="caption">Wood biomass: {{mainController.renewable[mainController.index]["Wood biomass (quadrillion Btu)"]}}</span></p>' +
             '   <p><span class="caption">Hydropower: {{mainController.renewable[mainController.index]["Hydropower (quadrillion Btu)"]}}</span></p>' +
             '</div>');
-
+        // jscs:enable maximumLineLength
         var element = $compile('<elf-renewable></elf-renewable>')(scope);
         scope.$digest();
 

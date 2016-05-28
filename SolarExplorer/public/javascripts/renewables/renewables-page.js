@@ -1,6 +1,6 @@
-var elfApp = angular.module("elfApp");
+var elfApp = angular.module('elfApp');
 
-elfApp.controller('MainController', function($scope, $http, renewableUtils) {
+elfApp.controller('RenewablesController', function($scope, $http, renewableUtils) {
     'use strict';
     $scope.mainData = 'Data for main page.';
     $scope.index = 0;
@@ -19,25 +19,12 @@ elfApp.controller('MainController', function($scope, $http, renewableUtils) {
                 console.log('Error:', response.status, response.statusText);
             });
     };
-
-    $scope.getRenewableOld = function() {
-        console.log('getRenewable');
-        $http.get('data/Renewable.json')
-            .then(function(response) {
-                console.log(response.data[0]);
-                $scope.renewable = response.data;
-            }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-                console.log('Error:', response.status, response.statusText);
-            });
-    };
 });
 
 elfApp.directive('elfRenewable', function() {
     'use strict';
     return {
-        controller: 'MainController',
+        controller: 'RenewablesController',
         templateUrl: 'renewables/renewable'
     };
 });

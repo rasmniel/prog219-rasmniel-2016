@@ -1,8 +1,8 @@
 describe('Elvenware Simple Mocks with HttpBackend Suite', function() {
-
     'use strict';
-
-    var $httpBackend, scope, mainController;
+    var $httpBackend;
+    var scope;
+    var mainController;
 
     // Set up the module
     beforeEach(module('elfApp'));
@@ -11,7 +11,7 @@ describe('Elvenware Simple Mocks with HttpBackend Suite', function() {
         scope = _$rootScope_.$new();
         var $compile = _$compile_;
         $httpBackend = _$httpBackend_;
-        mainController = _$controller_('MainController', {
+        mainController = _$controller_('RenewablesController', {
             $scope: scope
         });
     }));
@@ -32,6 +32,7 @@ describe('Elvenware Simple Mocks with HttpBackend Suite', function() {
     it('proves we can mock getting JSON data', function() {
 
         var renewable = [{
+            // jscs:disable validateQuoteMarks
             "Year": "2017",
             "Solar (quadrillion Btu)": "0.8045307",
             "Geothermal (quadrillion Btu)": "0.2349284",
@@ -40,6 +41,8 @@ describe('Elvenware Simple Mocks with HttpBackend Suite', function() {
             "Liquid biofuels (quadrillion Btu)": "1.2329197",
             "Wood biomass (quadrillion Btu)": "1.9860924",
             "Hydropower (quadrillion Btu)": "2.5859957"
+
+            // jscs:enable validateQuoteMarks
         }];
 
         // Define what happens when $http.get() is called.

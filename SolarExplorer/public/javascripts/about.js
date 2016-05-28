@@ -1,4 +1,4 @@
-var elfApp = angular.module("elfApp");
+var elfApp = angular.module('elfApp');
 
 elfApp.controller('AboutController', function() {
     'use strict';

@@ -1,0 +1,32 @@
+h1 EnergyTypes
+
+p This is the energy selector page
+
+p {{selectorData}}
+
+.panel.panel-default
+    .panel-heading Instructions
+    .panel-body
+        p Select an MSN type to iterate over filtered data
+
+.panel.panel-default
+    .panel-heading MSN Types
+    .panel-body
+        li(ng-repeat='msn in msnTypes track by $index')
+            a(ng-click='setChosenMNS(msn.description)') {{msn.msn}}: {{msn.description}}
+
+.panel.panel-default
+    .panel-heading Iterate over filtered Energy Types
+    .panel-body
+        | Number: 
+        input(type='number', name='input', ng-model='index', min='0', max='', required='')
+        br
+        br
+        energy-types
+        
+.panel.panel-default
+    .panel-heading Record counts
+    .panel-body
+        p Energy count: {{energyCount}}
+        hr
+        p Filtered count: {{filteredCount}}

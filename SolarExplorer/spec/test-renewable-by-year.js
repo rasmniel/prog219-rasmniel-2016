@@ -40,6 +40,7 @@ describe('Simple Format Exercises Suite - aka. Renewable By Year Suite', functio
 
     it('proves renewables.getByYear returns index & expected object with string year', function() {
         var renewableByYear = {
+            // jscs:disable validateQuoteMarks
             "Year": "2015",
             "Solar (quadrillion Btu)": "0.532293912",
             "Geothermal (quadrillion Btu)": "0.22367033",
@@ -48,6 +49,8 @@ describe('Simple Format Exercises Suite - aka. Renewable By Year Suite', functio
             "Liquid biofuels (quadrillion Btu)": "1.2204771324",
             "Wood biomass (quadrillion Btu)": "2.059217456",
             "Hydropower (quadrillion Btu)": "2.388612049"
+
+            // jscs:enable validateQuoteMarks
         };
 
         var result = scope.renewableUtils.getByYear('2015');
@@ -59,6 +62,7 @@ describe('Simple Format Exercises Suite - aka. Renewable By Year Suite', functio
 
     it('proves renewables.getByYear returns index & expected object with numeric year', function() {
         var renewableByYear = {
+            // jscs:disable validateQuoteMarks
             "Year": "2012",
             "Solar (quadrillion Btu)": "0.227349746",
             "Geothermal (quadrillion Btu)": "0.211592042",
@@ -67,6 +71,8 @@ describe('Simple Format Exercises Suite - aka. Renewable By Year Suite', functio
             "Liquid biofuels (quadrillion Btu)": "1.0906491156",
             "Wood biomass (quadrillion Btu)": "2.010265721",
             "Hydropower (quadrillion Btu)": "2.628701965"
+
+            // jscs:enable validateQuoteMarks
         };
 
         var result = scope.renewableUtils.getByYear(2012);

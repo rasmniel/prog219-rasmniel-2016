@@ -19,7 +19,7 @@ describe('Simple Format HttpBackend Suite', function() {
         $compile = _$compile_;
         $templateCache = _$templateCache_;
         $httpBackend = _$httpBackend_;
-        mainController = _$controller_('MainController', {
+        mainController = _$controller_('RenewablesController', {
             $scope: scope
         });
     }));

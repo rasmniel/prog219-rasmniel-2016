@@ -12,7 +12,7 @@ describe('Renewables Suite', function() {
         scope = _$rootScope_.$new();
         var $compile = _$compile_;
         $httpBackend = _$httpBackend_;
-        mainController = _$controller_('MainController', {
+        mainController = _$controller_('RenewablesController', {
             $scope: scope
         });
     }));
@@ -76,7 +76,8 @@ describe('Renewables Suite', function() {
         var simpleFormat = scope.renewableUtils.getSimpleFormat();
         var keys = Object.keys(simpleFormat[0]);
         keys.sort();
-        expect(keys).toEqual(['geo', 'solar', 'wind']);
+        // Added the rest of the properties to the simple format.
+        expect(keys).toEqual([ 'geo', 'hydro', 'liquid', 'other', 'solar', 'wind', 'wood' ]);
     });
 
     it('proves that getSimpleStringFormat returns the expected string data', function() {

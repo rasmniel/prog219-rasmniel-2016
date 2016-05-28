@@ -1,0 +1,26 @@
+h1 EnergyTypes
+
+p This is the energy types page
+
+p {{energyData}}
+
+button.btn.btn-primary(ng-click='getEnergyTypes()') Get Energy Types
+
+.panel.panel-default
+    .panel-heading Iterate over All Energy Types
+    .panel-body
+        | Number: 
+        input(type='number', name='input', ng-model='index', min='0', max='', required='')
+        br
+        br
+        energy-types
+        
+.panel.panel-default
+    .panel-heading Unique MSN Types
+    .panel-body
+        li(ng-repeat='msn in msnTypes track by $index')
+            p {{msn.msn}}: {{msn.description}}
+        
+.panel.panel-default
+    .panel-body
+        p Energy count: {{energyCount}}
