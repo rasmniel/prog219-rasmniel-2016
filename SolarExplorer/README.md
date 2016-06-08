@@ -1,2 +1,2 @@
-# Week04-AngularDirectiveTesting
-by Charlie Calvert
+# SolarExplorer
+by Rasmus Nielsen
