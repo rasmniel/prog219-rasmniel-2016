@@ -44,12 +44,10 @@ router.post('/updateSettings', function(request, response) {
             response.send({
                 result: 'error'
             });
-        }
-        else {
+        } else {
             if (doc === null) {
                 saveSettings(request, response);
-            }
-            else {
+            } else {
                 doc.dataType = request.body.dataType;
                 doc.dataSource = request.body.dataSource;
                 doc.comment = request.body.comment;
@@ -73,8 +71,7 @@ router.get('/getSettings', function(request, response) {
             response.send({
                 result: 'error'
             });
-        }
-        else {
+        } else {
             if (doc === null) {
                 response.send({
                     settings: {
@@ -83,8 +80,7 @@ router.get('/getSettings', function(request, response) {
                         comment: 'Default Comment'
                     }
                 });
-            }
-            else {
+            } else {
                 response.send({
                     settings: doc
                 });

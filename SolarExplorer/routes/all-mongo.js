@@ -11,6 +11,7 @@ var totalScientistsSaved = 0;
 function allMongo() {
 
 }
+
 function insertScientist(scientist, response) {
     if (!connect.connected) {
         connect.doConnection();
@@ -30,7 +31,9 @@ function insertScientist(scientist, response) {
         totalScientistsSaved++;
         if (totalScientistsSaved === numberOfScientists) {
             //mongoose.disconnect();
-            response.send({result: 'Success'});
+            response.send({
+                result: 'Success'
+            });
         }
     });
 }
@@ -38,7 +41,7 @@ function insertScientist(scientist, response) {
 allMongo.writeData = function(fileName, data) {
     var data = JSON.stringify(data, null, 4);
     fs.writeFile(fileName, data, function(err, data) {
-        if (err) throw(err);
+        if (err) throw (err);
         console.log('success writing file');
     });
 };

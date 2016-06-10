@@ -23,8 +23,7 @@ elfApp.controller('HomeController', function($scope, $http) {
             $http.get('data/Renewable.json').then(function(result) {
                 display(result);
             });
-        }
-        else if ($scope.formData.dataType === 'Database') {
+        } else if ($scope.formData.dataType === 'Database') {
             var useSimple = $scope.formData.dataSource !== 'MLab';
             loadData(useSimple);
         }

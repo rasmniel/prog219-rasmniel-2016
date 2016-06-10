@@ -77,7 +77,7 @@ describe('Renewables Suite', function() {
         var keys = Object.keys(simpleFormat[0]);
         keys.sort();
         // Added the rest of the properties to the simple format.
-        expect(keys).toEqual([ 'geo', 'hydro', 'liquid', 'other', 'solar', 'wind', 'wood' ]);
+        expect(keys).toEqual(['geo', 'hydro', 'liquid', 'other', 'solar', 'wind', 'wood']);
     });
 
     it('proves that getSimpleStringFormat returns the expected string data', function() {

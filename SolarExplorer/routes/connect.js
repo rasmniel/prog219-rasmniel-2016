@@ -39,8 +39,7 @@ var connect = {
         var connectType = useSimple || true;
         if (connectType) {
             connect.simpleConnect();
-        }
-        else {
+        } else {
             connect.mlabConnect();
         }
     }
