@@ -3,7 +3,7 @@ var elfApp = angular.module('elfApp');
 elfApp.controller('HomeController', function($scope, $http) {
     'use strict';
 
-    $scope.mainData = 'HomeController MainData';
+    $scope.mainData = 'My home page data';
     $scope.resultFull = '/database/saveSettings';
     $scope.resultMirror = '/database/saveSettings';
     $scope.formData = {
