@@ -9,6 +9,8 @@ elfApp.controller('RenewableByYearController', function($scope, $http, renewable
         // console.log('getRenewable');
         $http.get('data/Renewable.json')
             .then(function(res) {
+                // Clamp userYearInput between 2006 and 2016.
+                $scope.userYearInput = Math.min(Math.max($scope.userYearInput, 2006), 2016);
                 renewableUtils.init(res.data);
                 $scope.renewable = res.data;
                 $scope.renewableUtils = renewableUtils;
@@ -22,7 +24,7 @@ elfApp.controller('RenewableByYearController', function($scope, $http, renewable
     };
 
     $scope.getByYear = function(year) {
-        var renewableData = $scope.renewableUtils.getByYear(year);
+        var renewableData = $scope.renewableUtils.getByYear(year || $scope.userYearInput);
         $scope.index = renewableData.index;
         $scope.renewableByYear = renewableData.renewable;
         return $scope.renewableByYear;

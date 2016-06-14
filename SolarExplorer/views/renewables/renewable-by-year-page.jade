@@ -2,9 +2,12 @@ p This is renewables by year
 
 p {{byYearData}}
 
-input(type="number", data-ng-model="userYearInput")
-
 button.btn.btn-primary(ng-click="getRenewableByYear()") Get Renewable by Year
+
+div
+    label
+        | Number: 
+        input#yearInput(type="number", data-ng-model="userYearInput", ng-click="getByYear()")
 
 hr
 
