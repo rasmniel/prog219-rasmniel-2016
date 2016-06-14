@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var renewables = require('../models/renewables');
+var Renewables = require('../models/renewables');
 var connect = require('./connect.js');
 
 router.get('/', function(request, response) {
@@ -14,7 +14,7 @@ router.get('/getData', function(request, response) {
         var useSimple = request.query.databaseConnect;
         connect.doConnection(useSimple);
     }
-    renewables.find({}, function(err, docs) {
+    Renewables.find({}, function(err, docs) {
         if (err) {
             response.send({
                 result: 'error'
@@ -31,7 +31,7 @@ router.post('/addJSON', function(request, response) {
     }
     for (var i = 0; i < request.body.list.length; i++) {
         var data = request.body.list[i];
-        var newRenewables = new renewables({
+        var newRenewables = new Renewables({
             Year: data.Year,
             Solar: data['Solar (quadrillion Btu)'],
             Geothermal: data['Geothermal (quadrillion Btu)'],
@@ -41,9 +41,7 @@ router.post('/addJSON', function(request, response) {
             WoodBiomass: data['Wood biomass (quadrillion Btu)'],
             Hydropower: data['Hydropower (quadrillion Btu)'],
         });
-        newRenewables.save(function(err) {
-            console.log(err);
-        });
+        newRenewables.save();
         console.log('Saved: ' + data);
     }
     response.send({
@@ -56,7 +54,7 @@ router.get('/clear', function(request, response) {
     if (!connect.connected) {
         connect.doConnection(request.body.useSimple);
     }
-    renewables.remove({}, function(err, removeResponse) {
+    Renewables.remove({}, function(err, removeResponse) {
         console.log('collection removed');
         response.send({
             result: 'success: ' + removeResponse.result.n + ' items removed!'

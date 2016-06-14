@@ -12,19 +12,21 @@
                     option Database
                     option JSON
                 hr
+                
                 //          Not implemented...
                 // select(ng-model='formData.dataSource')
                 //     option Local MongoDb
                 //     option MLab
                 // hr
+                
                 input(type="text", ng-model='formData.comment')
 
                 hr
                 button.btn.btn-secondary(type="submit") Submit
             hr
             button.btn.btn-primary(ng-click="execute()") Get Data
-            button.btn.btn-success(ng-click="insertJSON()") Insert in DB
-            button.btn.btn-danger(ng-click="clear()") Clear Databse
+            button.btn.btn-success(ng-click="insertJSON()") Insert Data
+            button.btn.btn-danger(ng-click="clear()") Clear Database
     .panel.panel-default
         .panel-heading Results
         .panel-body
